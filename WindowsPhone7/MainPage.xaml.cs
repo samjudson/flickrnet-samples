@@ -20,5 +20,13 @@ namespace WindowsPhone7
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            string content = button.Content as string;
+
+            NavigationService.Navigate(new Uri("/" + content + ".xaml", UriKind.Relative));
+        }
     }
 }

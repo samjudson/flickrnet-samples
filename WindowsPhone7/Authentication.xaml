@@ -11,7 +11,7 @@
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -31,7 +31,7 @@
             <StackPanel>
                 <TextBlock>Authenticate in the web browser shown below.</TextBlock>
             </StackPanel>
-            <phone:WebBrowser x:Name="WebBrowser1"/>
+            <phone:WebBrowser x:Name="WebBrowser1" Navigating="WebBrowser1_Navigating" />
         </Grid>
     </Grid>
  

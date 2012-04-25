@@ -29,8 +29,8 @@
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <StackPanel>
-                <Button>Search</Button>
-                <Button>Authentication</Button>
+                <Button Click="Button_Click">Search</Button>
+                <Button Click="Button_Click">Authentication</Button>
             </StackPanel>
         </Grid>
     </Grid>
