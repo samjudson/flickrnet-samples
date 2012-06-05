@@ -21,5 +21,11 @@ namespace WinForms
             AuthForm form = new AuthForm();
             form.ShowDialog();
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            PhotoSearchForm form = new PhotoSearchForm();
+            form.ShowDialog();
+        }
     }
 }
