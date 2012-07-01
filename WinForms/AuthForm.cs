@@ -24,7 +24,7 @@ namespace WinForms
             Flickr f = FlickrManager.GetInstance();
             requestToken = f.OAuthGetRequestToken("oob");
 
-            string url = f.OAuthCalculateAuthorizationUrl(requestToken.Token, AuthLevel.Read);
+            string url = f.OAuthCalculateAuthorizationUrl(requestToken.Token, AuthLevel.Write);
 
             System.Diagnostics.Process.Start(url);
 

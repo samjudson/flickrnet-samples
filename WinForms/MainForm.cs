@@ -27,5 +27,17 @@ namespace WinForms
             PhotoSearchForm form = new PhotoSearchForm();
             form.ShowDialog();
         }
+
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (FlickrManager.OAuthToken == null || FlickrManager.OAuthToken.Token == null)
+            {
+                MessageBox.Show("You must authenticate before you can upload a photo.");
+                return;
+            }
+
+            UploadForm form = new UploadForm();
+            form.ShowDialog();
+        }
     }
 }
