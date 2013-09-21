@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Photostream Example</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -35,5 +35,8 @@
         </asp:ObjectDataSource>
     </div>
     </form>
+
+    <div><a href="Default.aspx">Back to Home</a></div>
+
 </body>
 </html>

@@ -9,9 +9,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    <a href="Auth.aspx">Authentication Example</a>
+        <a href="Auth.aspx">Authentication Example</a>
     </div>
     <div>
+        <a href="Photostream.aspx">Photostream Example</a>
     </div>
     </form>
 </body>

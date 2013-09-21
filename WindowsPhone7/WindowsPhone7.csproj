@@ -48,8 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FlickrNetWP7">
-      <HintPath>..\packages\FlickrNet.WP7.3.4.0\lib\sl3-wp\FlickrNetWP7.dll</HintPath>
+    <Reference Include="FlickrNetWP7, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FlickrNet.WP7.3.7.0\lib\sl3-wp\FlickrNetWP7.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Interop" />
@@ -95,6 +96,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="FlickrNet\FlickrNet.chm" />
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\WMAppManifest.xml" />

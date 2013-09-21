@@ -36,7 +36,7 @@ namespace WebApp
             }
             set
             {
-                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthToken", value));
+                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthToken", value) { Expires = DateTime.UtcNow.AddDays(1)});
             }
         }
 
@@ -52,7 +52,7 @@ namespace WebApp
             }
             set
             {
-                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthTokenSecret", value));
+                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthTokenSecret", value) { Expires = DateTime.UtcNow.AddDays(1)});
             }
         }
     }

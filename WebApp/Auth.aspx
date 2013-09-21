@@ -15,5 +15,7 @@
     <asp:Label runat="server" ID="ResultsLabel" />
     </div>
     </form>
+    
+    <div><a href="Default.aspx">Back to Home</a></div>
 </body>
 </html>
