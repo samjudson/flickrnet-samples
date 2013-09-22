@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Net;
 using System.Web;
 using System.Linq;
@@ -19,12 +20,15 @@ namespace WebApp
         public static Flickr GetAuthInstance()
         {
             var f = new Flickr(ApiKey, SharedSecret);
-            f.OAuthAccessToken = OAuthToken;
-            f.OAuthAccessTokenSecret = OAuthTokenSecret;
+            if (OAuthToken != null)
+            {
+                f.OAuthAccessToken = OAuthToken.Token;
+                f.OAuthAccessTokenSecret = OAuthToken.TokenSecret;
+            }
             return f;
         }
 
-        public static string OAuthToken
+        public static OAuthAccessToken OAuthToken
         {
             get
             {
@@ -32,27 +36,28 @@ namespace WebApp
                 {
                     return null;
                 }
-                return HttpContext.Current.Request.Cookies["OAuthToken"].Value;
+                var values = HttpContext.Current.Request.Cookies["OAuthToken"].Values;
+                return new OAuthAccessToken
+                           {
+                               FullName = values["FullName"],
+                               Token = values["Token"],
+                               TokenSecret = values["TokenSecret"],
+                               UserId = values["UserId"],
+                               Username = values["Username"]
+                           };
             }
             set
             {
-                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthToken", value) { Expires = DateTime.UtcNow.AddDays(1)});
-            }
-        }
-
-        public static string OAuthTokenSecret
-        {
-            get
-            {
-                if (!HttpContext.Current.Request.Cookies.AllKeys.Contains("OAuthTokenSecret"))
+                var cookie = new HttpCookie("OAuthToken")
                 {
-                    return null;
-                }
-                return HttpContext.Current.Request.Cookies["OAuthTokenSecret"].Value;
-            }
-            set
-            {
-                HttpContext.Current.Response.AppendCookie(new HttpCookie("OAuthTokenSecret", value) { Expires = DateTime.UtcNow.AddDays(1)});
+                    Expires = DateTime.UtcNow.AddDays(1),
+                };
+                cookie.Values["FullName"] = value.FullName;
+                cookie.Values["Token"] = value.Token;
+                cookie.Values["TokenSecret"] = value.TokenSecret;
+                cookie.Values["UserId"] = value.UserId;
+                cookie.Values["Username"] = value.Username;
+                HttpContext.Current.Response.AppendCookie(cookie);
             }
         }
     }

@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="WebApp.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .header {
+            margin: 5px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #000000;
+        }
+        .footer {
+            margin: 15px 0 5px 0;
+            padding-top: 5px;
+            border-top: 1px solid #000000;
+        }
+        * {
+            font-family: Verdana, sans-serif;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <asp:Label runat="server" ID="LoginLabel"></asp:Label>
+    </div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <div class="footer"><a href="Default.aspx">Back to Home</a></div>
+
+</body>
+</html>

@@ -18,8 +18,7 @@ namespace WebApp
                 OAuthRequestToken requestToken = Session["RequestToken"] as OAuthRequestToken;
                 OAuthAccessToken accessToken = f.OAuthGetAccessToken(requestToken, Request.QueryString["oauth_verifier"]);
 
-                FlickrManager.OAuthToken = accessToken.Token;
-                FlickrManager.OAuthTokenSecret = accessToken.TokenSecret;
+                FlickrManager.OAuthToken = accessToken;
 
                 ResultsLabel.Text = "You successfully authenticated as " + accessToken.FullName;
             }

@@ -1,19 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApp.Default" MasterPageFile="MasterPage.Master" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content runat="server" ContentPlaceHolderID="ContentPlaceHolder1">
+    
     <div>
         <a href="Auth.aspx">Authentication Example</a>
     </div>
     <div>
         <a href="Photostream.aspx">Photostream Example</a>
     </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
