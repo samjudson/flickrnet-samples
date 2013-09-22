@@ -7,4 +7,8 @@
     <div>
     <asp:Label runat="server" ID="ResultsLabel" />
     </div>
+        <div>
+        <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/Auth.aspx.cs">View Source Code</a>
+    </div>
+
 </asp:Content>

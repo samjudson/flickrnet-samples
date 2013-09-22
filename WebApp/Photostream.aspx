@@ -27,5 +27,8 @@
             </SelectParameters>
         </asp:ObjectDataSource>
     </div>
+    <div>
+        <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/Photostream.aspx.cs">View Source Code</a>
+    </div>
 </asp:Content>
 
