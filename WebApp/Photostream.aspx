@@ -14,7 +14,7 @@
                     SortExpression="PhotoId" />
                 <asp:HyperLinkField DataNavigateUrlFields="WebUrl" DataTextField="Title" />
                 <asp:ImageField DataAlternateTextField="Title" 
-                    DataImageUrlField="LargeSquareThumbnailUrl">
+                    DataImageUrlField="SquareThumbnailUrl">
                 </asp:ImageField>
             </Columns>
         </asp:GridView>
