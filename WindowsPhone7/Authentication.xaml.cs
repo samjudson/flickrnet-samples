@@ -45,7 +45,7 @@ namespace WindowsPhone7
                 requestToken = r.Result;
 
                 // get Authorization url
-                string url = f.OAuthCalculateAuthorizationUrl(requestToken.Token, AuthLevel.Read);
+                string url = f.OAuthCalculateAuthorizationUrl(requestToken.Token, AuthLevel.Write);
                 // Replace www.flickr.com with m.flickr.com for mobile version
                 url = url.Replace("www.flickr.com", "m.flickr.com");
 
@@ -74,6 +74,7 @@ namespace WindowsPhone7
 
             // Found verifier, so cancel navigation
             e.Cancel = true;
+            WebBrowser1.Visibility = Visibility.Collapsed;
 
             // Obtain the access token from Flickr
             Flickr f = FlickrManager.GetInstance();
@@ -83,10 +84,7 @@ namespace WindowsPhone7
                 // Check if an error was returned
                 if (r.Error != null)
                 {
-                    Dispatcher.BeginInvoke(() =>
-                    {
-                        MessageBox.Show("An error occurred getting the access token: " + r.Error.Message);
-                    });
+                    Dispatcher.BeginInvoke(() => MessageBox.Show("An error occurred getting the access token: " + r.Error.Message));
                     return;
                 }
 
@@ -96,11 +94,7 @@ namespace WindowsPhone7
                 FlickrManager.OAuthToken = accessToken.Token;
                 FlickrManager.OAuthTokenSecret = accessToken.TokenSecret;
 
-                Dispatcher.BeginInvoke(() =>
-                {
-                    MessageBox.Show("Authentication completed for user " + accessToken.FullName + ", with token " + accessToken.Token);
-                    return;
-                });
+                Dispatcher.BeginInvoke(() => MessageBox.Show("Authentication completed for user " + accessToken.FullName + ", with token " + accessToken.Token));
 
             });
 

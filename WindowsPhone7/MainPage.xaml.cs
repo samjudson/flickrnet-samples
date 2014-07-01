@@ -19,6 +19,8 @@ namespace WindowsPhone7
         public MainPage()
         {
             InitializeComponent();
+
+            UploadButton.IsEnabled = !String.IsNullOrEmpty(FlickrManager.OAuthToken);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -43,9 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FlickrNet, Version=3.7.0.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL">
+    <Reference Include="FlickrNet, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FlickrNet.3.7.0\lib\net20\FlickrNet.dll</HintPath>
+      <HintPath>..\packages\FlickrNet.3.12.0\lib\net20\FlickrNet.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -109,10 +109,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="MasterPage.Master" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
