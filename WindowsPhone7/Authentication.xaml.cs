@@ -47,7 +47,7 @@ namespace WindowsPhone7
                 // get Authorization url
                 string url = f.OAuthCalculateAuthorizationUrl(requestToken.Token, AuthLevel.Write);
                 // Replace www.flickr.com with m.flickr.com for mobile version
-                url = url.Replace("www.flickr.com", "m.flickr.com");
+                // url = url.Replace("https://www.flickr.com", "http://www.flickr.com");
 
                 // Navigate to url
                 Dispatcher.BeginInvoke(() => { WebBrowser1.Navigate(new Uri(url)); });
@@ -57,6 +57,8 @@ namespace WindowsPhone7
 
         private void WebBrowser1_Navigating(object sender, NavigatingEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("Url: " + e.Uri.AbsoluteUri);
+
             // if we are not navigating to the callback url then authentication is not complete.
             if (!e.Uri.AbsoluteUri.StartsWith(callbackUrl)) return;
 

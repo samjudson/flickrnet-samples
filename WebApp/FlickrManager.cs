@@ -2,7 +2,6 @@
 using System.Collections.Specialized;
 using System.Net;
 using System.Web;
-using System.Linq;
 using FlickrNet;
 
 namespace WebApp
@@ -32,7 +31,7 @@ namespace WebApp
         {
             get
             {
-                if (!HttpContext.Current.Request.Cookies.AllKeys.Contains("OAuthToken"))
+                if (HttpContext.Current.Request.Cookies["OAuthToken"] == null)
                 {
                     return null;
                 }
