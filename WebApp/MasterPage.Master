@@ -41,7 +41,8 @@
                     <li><a href="Photostream.aspx">Photostream</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="Auth.aspx"><asp:Literal runat="server" ID="LoginLabel"></asp:Literal></a></li>
+                    <li><a href="Auth.aspx">
+                        <asp:Literal runat="server" ID="LoginLabel"></asp:Literal></a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -56,6 +57,16 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.appInsights = window.appInsights || function (ai) {
+            function f(t) { ai[t] = function () { var i = arguments; ai.queue.push(function () { ai[t].apply(ai, i) }) } }
+            var t = document, r = "script", u = t.createElement(r), i; for (u.src = ai.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", t.getElementsByTagName(r)[0].parentNode.appendChild(u), ai.cookie = t.cookie, ai.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) f("track" + i.pop());
+            return ai;
+        }({
+            iKey: "a7cd7c85-7617-418b-aca7-b6c8dfb5d59a"
+        });
 
+        appInsights.trackPageView();
+    </script>
 </body>
 </html>
