@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using FlickrNet;
 
 namespace WebApp
@@ -12,15 +7,28 @@ namespace WebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // The request token is stored in session - if it isn't present then we do nothing
             if (Request.QueryString["oauth_verifier"] != null && Session["RequestToken"] != null)
             {
                 Flickr f = FlickrManager.GetInstance();
                 OAuthRequestToken requestToken = Session["RequestToken"] as OAuthRequestToken;
-                OAuthAccessToken accessToken = f.OAuthGetAccessToken(requestToken, Request.QueryString["oauth_verifier"]);
+                try
+                {
+                    OAuthAccessToken accessToken = f.OAuthGetAccessToken(requestToken,
+                        Request.QueryString["oauth_verifier"]);
+                    FlickrManager.OAuthToken = accessToken;
 
-                FlickrManager.OAuthToken = accessToken;
+                    ResultsLabel.Text = "You successfully authenticated as " + accessToken.FullName;
+                    ResultPanel.CssClass = "alert alert-success"; 
+                    ResultPanel.Visible = true;
+                }
+                catch (OAuthException ex)
+                {
+                    ResultsLabel.Text = "An error occurred retrieving the token : " + ex.Message;
+                    ResultPanel.CssClass = "alert alert-danger";
+                    ResultPanel.Visible = true;
 
-                ResultsLabel.Text = "You successfully authenticated as " + accessToken.FullName;
+                }
             }
         }
 

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using FlickrNet;
 
 namespace WebApp
@@ -21,7 +18,7 @@ namespace WebApp
         public static List<Photo> GetPhotostream(string userId)
         {
             Flickr f = FlickrManager.GetAuthInstance();
-            PhotoCollection photos = f.PeopleGetPublicPhotos(userId, 0, 10, SafetyLevel.None, PhotoSearchExtras.PathAlias);
+            PhotoCollection photos = f.PeopleGetPublicPhotos(userId, 0, 12, SafetyLevel.None, PhotoSearchExtras.PathAlias);
             return photos.ToList();
         }
     }

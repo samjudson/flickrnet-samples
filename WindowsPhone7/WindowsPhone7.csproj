@@ -176,9 +176,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FlickrNetWP7, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="FlickrNetWP7, Version=3.15.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FlickrNet.WP7.3.14.0\lib\sl3-wp\FlickrNetWP7.dll</HintPath>
+      <HintPath>..\packages\FlickrNet.WP7.3.15.0\lib\sl3-wp\FlickrNetWP7.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
