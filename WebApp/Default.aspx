@@ -18,7 +18,7 @@
                 </div>
                 <div class="panel-body">
                     <p>
-                        The sample includes a class called <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/FlickrManager.cs">FlickrManager</a> which is not part of the Flickr.Net library. 
+                        The sample includes a class called <a href="https://github.com/samjudson/flickrnet-samples/blob/master/WebApp/FlickrManager.cs">FlickrManager</a> which is not part of the Flickr.Net library. 
                     </p>
                     <p>
                         It is designed to show you how you might store and retrieve the authentication token.

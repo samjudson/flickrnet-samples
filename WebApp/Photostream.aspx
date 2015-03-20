@@ -59,7 +59,7 @@
                 <div class="panel-body">
                     <p>Clicking the link below will redirect you to the source code for this web age (the C# file behind).</p>
                     <p>
-                        <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/Photostream.aspx.cs">View Source Code</a>
+                        <a href="https://github.com/samjudson/flickrnet-samples/blob/master/WebApp/Photostream.aspx.cs">View Source Code</a>
                     </p>
                 </div>
             </div>
