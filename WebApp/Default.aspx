@@ -12,7 +12,7 @@
             <p>Enjoy.</p>
         </div>
         <div class="row">
-            <div class="panel panel-default">
+            <div class="panel panel-info">
                 <div class="panel-body">
                     <p>
                         The sample includes a class called <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/FlickrManager.cs">FlickrManager</a> which is not part of the Flickr.Net library. 
