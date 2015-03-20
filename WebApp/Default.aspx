@@ -13,6 +13,9 @@
         </div>
         <div class="row">
             <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">FlickrManager class</h3>
+                </div>
                 <div class="panel-body">
                     <p>
                         The sample includes a class called <a href="https://flickrnetsamples.codeplex.com/SourceControl/latest#WebApp/FlickrManager.cs">FlickrManager</a> which is not part of the Flickr.Net library. 
